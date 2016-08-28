@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##Key Requirement: Perform cost control of a company.
 
-Things you may want to cover:
+##Models
+Spent -> value:float date:date description:text 
+Spent_type -> Center of cost
 
-* Ruby version
+User -> Devise
 
-* System dependencies
+##Features:
+Approval workflow
+SMS Sending with a link to approval spent
+Adminstrate admin dashboard
+Email summary to managers for approvals.
+All operations needs to be documented.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+UI:
+Bootstrap
