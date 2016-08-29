@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :spents
   devise_for :users
   get 'static/home'
 
