@@ -1,4 +1,5 @@
 class SpentsController < ApplicationController
+  before_action :set_post, only:[:show]
 
   def index 
 
@@ -9,13 +10,17 @@ class SpentsController < ApplicationController
   end
 
   def create
-    @spent = Spent.new(params.require(:spent).permit(:value, :date, :description))
-    @spent.save
-    redirect_to @spent
+    @spent = Spent.new(spent_params)
+    
+    if @spent.save
+      redirect_to @spent, notice: 'Your spent was created sucessfully'
+    else
+      render :new
+    end
   end
 
   def show 
-    @spent = Spent.find(params[:id])
+   
   end
   
   private
@@ -25,4 +30,7 @@ class SpentsController < ApplicationController
     params.require(:spent).permit(:value, :date, :description)
   end
   
+  def set_spent 
+     @spent = Spent.find(params[:id]) 
+  end
 end
