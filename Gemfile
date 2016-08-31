@@ -13,6 +13,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+
 group :development, :test do
   gem 'byebug'
   gem 'rspec'
@@ -22,9 +24,7 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.7'
 end
 
-
 group :development do
- 
   gem 'web-console'
   gem 'listen', '~> 3.0.5'
  
