@@ -2,12 +2,11 @@
   <h1>Where is my money?!</h1>
 </div>
 
-
 <ul class="custom_nav nav nav-tabs">
-	<li class="active">
+	<li class="<%= active?(root_path) %>">
 		<%= link_to "Home", root_path %>
 	</li>
-	<li>
+	<li class="<%= active?(root_path) %>">
 		<%= link_to "Spents", spents_path %>
 	</li>
 
