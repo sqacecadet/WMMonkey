@@ -15,21 +15,39 @@ describe 'navigate' do
 	end
 
     describe 'creation' do 
-      it 'has a form that can be reached' do 
+     before do 
+     	user = User.create(email: "test@test.com", password: "asdfasdf", password_confirmation: "asdfasdf", first_name: "Ragnar", last_name: "LothBrok")
+        login_as(user, :scope => :user)
         visit new_spent_url
+     end
+      
+     it 'has a form that can be reached' do 
         expect(page.status_code).to eq(200)
-      end	
+     end
 
-      it 'allows users to create a new topic from the /new page' do
-        visit new_spent_url
-
+     it 'allows users to create a new topic from the /new page' do
         fill_in 'spent[value]', with: "19.90"
         fill_in 'spent[date]', with: Date.today
         fill_in 'spent[description]', with: "Star Wars Is a great movie"
-
         click_on "Save"
 
         expect(page).to have_content("Star Wars Is a great movie")
-      end
-    end
+     end
+
+    it 'will have a user asscocieted with ' do 
+       fill_in 'spent[value]', with: "19.90"
+       fill_in 'spent[date]', with: Date.today
+       fill_in 'spent[description]', with: "user_association"
+       click_on "Save"
+
+       expect(User.last.spents.last.description).to eq('user_association')
+     end
+   end
 end
+
+
+
+
+
+
+

@@ -1,5 +1,5 @@
 class SpentsController < ApplicationController
-  before_action :set_post, only:[:show]
+  before_action :set_spent, only:[:show]
 
   def index 
 
@@ -11,6 +11,7 @@ class SpentsController < ApplicationController
 
   def create
     @spent = Spent.new(spent_params)
+    @spent.user_id = current_user.id
     
     if @spent.save
       redirect_to @spent, notice: 'Your spent was created sucessfully'
