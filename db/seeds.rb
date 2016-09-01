@@ -6,11 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+@user = User.create(email: "test@test.com", password: "asdfasdf", password_confirmation: "asdfasdf", first_name: "Ragnar", last_name: "LothBrok")
+
 100.times do |spent|
 	svalue = '3.14159'
 	sdescription = "I need to spent #{svalue} on #{Date.today} to build rockets";
 
-	Spent.create!(value: svalue, date: Date.today, description: sdescription)
+	Spent.create!(value: svalue, date: Date.today, description: sdescription, user_id: @user.id)
 end
 
 puts "100 records have been created"

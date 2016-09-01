@@ -2,6 +2,7 @@ class SpentsController < ApplicationController
   before_action :set_spent, only:[:show]
 
   def index 
+    @spents = Spent.all
 
   end
 

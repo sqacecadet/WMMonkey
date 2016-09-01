@@ -1,1 +1,46 @@
-<p>Spents</p>
+<h1>Spents</h1>
+
+<table class="table table-hover table-striped">
+<thead>
+<tr>
+	<th>
+		#
+	</th>
+	<th>
+		Value
+	</th>
+	<th>
+		Date
+	</th>
+	<th>
+		description
+	</th>
+	<th>
+		username
+	</th>
+</tr>
+</thead>
+
+<tbody>
+	<% @spents.each  do |spent| %>
+      <tr>
+	    <td>
+	  	  <%= spent.id %>
+	    </td>
+	    <td>
+	      <%= spent.value %>
+	    </td>
+	    <td>
+	      <%= spent.date %>
+	    </td>
+	    <td>
+		  <%= spent.description %>
+  	    </td>
+        <td>
+	  	  <%= spent.user.last_name %>
+	    </td>
+      </tr>
+    <% end %>
+
+  </body>
+</table>
