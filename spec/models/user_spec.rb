@@ -1,12 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  #pending "add some examples to (or delete) #{__FILE__}"  
-  describe "creation" do
-  	before do 
-  	  @user = User.create(email: "test@test.com", password: "asdfasdf", password_confirmation: "asdfasdf", first_name: "Ragnar", last_name: "LothBrok")
+    before do 
+      @user = User.create(email: "test@test.com", password: "asdfasdf", password_confirmation: "asdfasdf", first_name: "Ragnar", last_name: "LothBrok")
     end
 
+  #pending "add some examples to (or delete) #{__FILE__}"  
+  describe "creation" do
     it "can be created" do       
       expect(@user).to be_valid
     end
@@ -18,4 +18,13 @@ RSpec.describe User, type: :model do
       expect(@user).to_not be_valid
     end
   end
+
+  describe "custom name methods"
+    it 'will have a method that combines fisrt and last name' do
+      expect(@user.last_name).to eq("Ragnar", "LothBrok")
+    end
+
+
 end
+
+

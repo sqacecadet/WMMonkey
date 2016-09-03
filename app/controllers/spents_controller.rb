@@ -1,5 +1,5 @@
 class SpentsController < ApplicationController
-  before_action :set_spent, only:[:show]
+  before_action :set_spent, only:[:show, :destroy]
 
   def index 
     @spents = Spent.all
@@ -23,6 +23,11 @@ class SpentsController < ApplicationController
 
   def show 
    
+  end
+
+  def destroy
+    @spent.destroy
+    redirect_to @spent, notice: 'Your spent was created sucessfully'
   end
   
   private

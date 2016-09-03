@@ -8,13 +8,17 @@ describe 'navigate' do
   end
 
 	describe 'index' do
-      it 'can be reached sucessfully' do
+      before do 
         visit spents_path
+      end
+
+      it 'can be reached sucessfully' do
+        
         expect(page.status_code).to eq(200)	
     	end
 
       it 'Spent need to have a value and date and a description' do
-        visit spents_path
+        
         expect(page).to have_content(/Spents/)
 	    end
 
