@@ -1,20 +1,12 @@
 <tr>
+
+<td><%= spent.id %></td>
+<td><%= spent.value %></td>
+<td><%= spent.date %></td>
+<td><%= spent.description %></td>
+<td><%= spent.user.full_name %></td>
+
 <td>
-  <%= spent.id %>
-</td>
-<td>
-  <%= spent.value %>
-</td>
-<td>
-  <%= spent.date %>
-</td>
-<td>
-<%= spent.description %>
-  </td>
-  <td>
-  <%= spent.user.full_name %>
-</td>
-  <td>
     <%= link_to t('.show', :default => t("helpers.links.show")),
                 spents_path(spent), :class => 'btn btn-default btn-xs' %>
 
@@ -27,4 +19,5 @@
                 :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                 :class => 'btn btn-xs btn-danger' %>
   </td>
+
 </tr>

@@ -1,0 +1,37 @@
+<%= form_for(wallet, :html => {multipart: true, :class => 'form-horizontal' }) do |f| %>
+
+  <% if wallet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(wallet.errors.count, "error") %> prohibited this wallet from being saved:</h2>
+
+      <ul>
+      <% wallet.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="container">
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :total %>
+    <%= f.text_field :total %>
+  </div>
+
+  <%= f.select(:user_id,
+               User.order(:email).collect {|user| [user.email, user.id]},
+               {include_blank: "Select User"},
+               {class: "form-control"} ) %>
+  <hr>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+    </div>
+
+<% end %>

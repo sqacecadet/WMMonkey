@@ -1,43 +1,26 @@
 <h1>Spents</h1>
 
-
- 
-
-
-
 <table class="table table-hover table-striped">
 <thead>
 <tr>
-	<th>
-		#
-	</th>
-	<th>
-		Value
-	</th>
-	<th>
-		Date
-	</th>
-	<th>
-		description
-	</th>
-	<th>
-		username
-	</th>
+	<th>#</th>
+	<th>Value</th>
+	<th>Date</th>
+	<th>description</th>
+	<th>username</th>
 </tr>
 </thead>
-
 <tbody>
-
-     <div class="row">
-          <%= render 'shared/progressbar' %>
-       </div>
-
-<div class="row">
-
-    <%= render @spents %>
-    
+    <%= link_to 'New Wallet', new_spent_path %>
+    <div class="row">
+        <%= render 'shared/progressbar' %>
     </div>
-  </body>
+
+	<div class="row">
+	    <%= render @spents %>
+	</div>
+
+</body>
 </table>
 
 </div>

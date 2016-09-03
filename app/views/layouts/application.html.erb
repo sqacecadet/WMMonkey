@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>WhereIsMyMoneyApp</title>
+    <title>Where is my money?!</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= render 'shared/navbar' %>
+
   </head>
 
   <body >
@@ -14,7 +17,9 @@
 
       <div class="row">
         <div class="col-md-12">
+
           <%= render 'shared/nav' %>
+
           <%= yield %> 
 
         </div>
