@@ -1,4 +1,4 @@
-<%= form_for(wallet, :html => {multipart: true, :class => 'form-horizontal' }) do |f| %>
+<%= form_for @wallet, class: "form-horizontal" do |f| %>
 
   <% if wallet.errors.any? %>
     <div id="error_explanation">
@@ -12,16 +12,14 @@
     </div>
   <% end %>
 
-  <div class="container">
-
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.label :name, class: "col-sm-2 control-label" %>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :total %>
-    <%= f.text_field :total %>
+  <div class="form-group">
+    <%= f.label :total, class: "col-sm-2 control-label" %>
+    <%= f.text_field :total, class: "form-control" %>
   </div>
 
   <%= f.select(:user_id,
@@ -32,6 +30,6 @@
   <div class="actions">
     <%= f.submit %>
   </div>
-    </div>
+
 
 <% end %>
