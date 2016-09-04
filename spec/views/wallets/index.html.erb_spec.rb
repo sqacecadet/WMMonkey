@@ -6,12 +6,12 @@ RSpec.describe "wallets/index", type: :view do
       Wallet.create!(
         :name => "Name",
         :total => 2.5,
-        :user => nil
+        :user => FactoryGirl.create(:user)
       ),
       Wallet.create!(
         :name => "Name",
         :total => 2.5,
-        :user => nil
+        :user => FactoryGirl.create(:user)
       )
     ])
   end

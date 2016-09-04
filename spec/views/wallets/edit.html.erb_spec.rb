@@ -5,7 +5,7 @@ RSpec.describe "wallets/edit", type: :view do
     @wallet = assign(:wallet, Wallet.create!(
       :name => "MyString",
       :total => 1.5,
-      :user => nil
+      :user => FactoryGirl.create(:user33)
     ))
   end
 

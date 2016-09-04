@@ -2,6 +2,6 @@ FactoryGirl.define do
   factory :wallet do
     name "MyString"
     total 1.5
-    user nil
+    user FactoryGirl.create(:user)
   end
 end

@@ -1,8 +1,16 @@
 FactoryGirl.define do
   factory :spent do
     value 1.5
-    date "2016-08-29"
-    description "MyText"
-    type ""
+    date Date.today
+    description "test1"
+    user
   end
+
+  factory :spent2, class: "Spent" do
+    value 1.5
+    date Date.yesterday
+    description "test2"
+    user
+  end
+
 end

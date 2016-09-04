@@ -2,30 +2,29 @@ require 'rails_helper'
 
 describe 'navigate' do
 
-  before do 
-    user = User.create(email: "test@test.com", password: "asdfasdf", password_confirmation: "asdfasdf", first_name: "Ragnar", last_name: "LothBrok")
+  before do
+    user = FactoryGirl.create(:user)
     login_as(user, :scope => :user)
   end
 
 	describe 'index' do
-      before do 
+      before do
         visit spents_path
       end
 
       it 'can be reached sucessfully' do
-        
-        expect(page.status_code).to eq(200)	
+
+        expect(page.status_code).to eq(200)
     	end
 
       it 'Spent need to have a value and date and a description' do
-        
+
         expect(page).to have_content(/Spents/)
 	    end
 
-      it 'has a list of spents' do 
-        user = User.create(email: "ragnar@test.com", password: "asdfasdf", password_confirmation: "asdfasdf", first_name: "Ragnar", last_name: "LothBrok")
-        spent1 = Spent.create!(value: '3.14', date: Date.today, description:"test1", user_id: user.id)
-        spent2 = Spent.create!(value: '3.14', date: Date.today, description:"test2", user_id: user.id)
+      it 'has a list of spents' do
+        spent1 = FactoryGirl.create(:spent)
+        spent2 = FactoryGirl.create(:spent2)
 
         visit spents_path
 
@@ -33,12 +32,12 @@ describe 'navigate' do
       end
   end
 
-    describe 'creation' do 
+    describe 'creation' do
      before do
         visit new_spent_url
      end
 
-     it 'has a form that can be reached' do 
+     it 'has a form that can be reached' do
         expect(page.status_code).to eq(200)
      end
 
@@ -51,7 +50,7 @@ describe 'navigate' do
         expect(page).to have_content("Star Wars Is a great movie")
      end
 
-    it 'will have a user asscocieted with ' do 
+    it 'will have a user asscocieted with ' do
        fill_in 'spent[value]', with: "19.90"
        fill_in 'spent[date]', with: Date.today
        fill_in 'spent[description]', with: "user_association"
@@ -61,10 +60,3 @@ describe 'navigate' do
      end
    end
 end
-
-
-
-
-
-
-

@@ -1,13 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-    before do 
-      @user = User.create(email: "test@test.com", password: "asdfasdf", password_confirmation: "asdfasdf", first_name: "Ragnar", last_name: "LothBrok")
+    before do
+      @user = FactoryGirl.create(:user)
     end
 
-  #pending "add some examples to (or delete) #{__FILE__}"  
+  #pending "add some examples to (or delete) #{__FILE__}"
   describe "creation" do
-    it "can be created" do       
+    it "can be created" do
       expect(@user).to be_valid
     end
 
@@ -26,5 +26,3 @@ RSpec.describe User, type: :model do
 
 
 end
-
-
