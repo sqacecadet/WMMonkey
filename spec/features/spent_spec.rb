@@ -51,7 +51,7 @@ describe 'navigate' do
     before do
      @spent = FactoryGirl.create(:spent)
     end
-    
+
     it 'can be reached by clicking edit on index page' do
       visit spents_path
       click_on "edit_#{@spent.id}"
@@ -65,6 +65,24 @@ describe 'navigate' do
       fill_in 'spent[description]', with: "Edited Content"
       click_on "Save"
       expect(page).to have_content("Edited Content")
+    end
+  end
+
+  describe "New" do
+    it "has a link on hamepage" do
+      visit root_path
+
+      click_link("new_post_from_nav")
+      expect(page.status_code).to eq(200)
+    end
+  end
+
+  describe "Delete" do
+    it "can be deleted" do
+      spent = FactoryGirl.create(:spent)
+      visit spents_path
+      click_link("delete_post_#{spent.id}_from_index")
+      expect(page.status_code).to eq(200)
     end
   end
 

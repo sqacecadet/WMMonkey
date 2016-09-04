@@ -4,7 +4,10 @@
 		<%= link_to "Home", root_path %>
 	</li>
 	<li class="<%= active?(root_path) %>">
-		<%= link_to "Spents", spents_path %>
+		<%= link_to "Spents Entries", spents_path %>
+	</li>
+	<li class="<%= active?(root_path) %>">
+		<%= link_to "Add new Entrie", new_spent_path, id: "new_post_from_nav" %>
 	</li>
 	<li class="<%= active?(root_path) %>">
 		<%= link_to "Wallets", wallets_path %>

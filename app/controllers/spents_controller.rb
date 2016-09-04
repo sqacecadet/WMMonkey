@@ -14,7 +14,7 @@ class SpentsController < ApplicationController
     @spent.user_id = current_user.id
 
     if @spent.save
-      redirect_to @spent, notice: 'Your spent was created sucessfully'
+      redirect_to spents_path, notice: 'Your spent was created sucessfully'
     else
       render :new
     end
@@ -37,7 +37,7 @@ end
 
   def destroy
     @spent.destroy
-    redirect_to @spent, notice: 'Your spent was created sucessfully'
+    redirect_to spents_path, notice: 'Your spent was destroyed sucessfully'
   end
 
   private
