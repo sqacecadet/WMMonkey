@@ -1,29 +1,20 @@
 FactoryGirl.define do
-
   sequence :email do |n|
-    "teste#{n}@example.com"
+      "person#{n}@example.com"
   end
 
   factory :user do
-    first_name "anderson"
-    last_name "lima"
+    first_name 'anderson'
+    last_name 'silva'
     email { generate :email }
     password "asdfasdf"
     password_confirmation "asdfasdf"
   end
 
-  factory :second_user do
-    first_name "anderson"
-    last_name "lima"
+  factory :admin_user, class: "AdminUser" do
+    first_name 'Admin'
+    last_name 'User'
     email { generate :email }
-    password "asdfasdf"
-    password_confirmation "asdfasdf"
-  end
-
-  factory :adminstrator do
-    first_name "admin"
-    last_name "lima"
-    email "admin@test.com"
     password "asdfasdf"
     password_confirmation "asdfasdf"
   end
