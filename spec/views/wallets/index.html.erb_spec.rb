@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "wallets/index", type: :view do
+=begin
   before(:each) do
     assign(:wallets, [
       Wallet.create!(
@@ -22,4 +23,5 @@ RSpec.describe "wallets/index", type: :view do
     assert_select "tr>td", :text => 2.5.to_s, :count => 2
     assert_select "tr>td", :text => nil.to_s, :count => 2
   end
+=end
 end

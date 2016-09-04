@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "wallets/edit", type: :view do
+=begin
   before(:each) do
     @wallet = assign(:wallet, Wallet.create!(
       :name => "MyString",
@@ -21,4 +22,5 @@ RSpec.describe "wallets/edit", type: :view do
       assert_select "input#wallet_user_id[name=?]", "wallet[user_id]"
     end
   end
+=end
 end
