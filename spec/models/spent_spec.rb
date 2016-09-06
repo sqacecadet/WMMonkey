@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Spent, type: :model do
   describe "creation" do
   	before do
-  	  @spent = FactoryGirl.create(:spent2)
+  	  @spent = FactoryGirl.create(:spent)
     end
     it "can be created" do
       expect(@spent).to be_valid

@@ -14,8 +14,9 @@ gem 'jbuilder', '~> 2.5'
 #Notifications
 gem 'gritter', '~> 1.2'
 
-gem 'devise'
+gem 'faker', '~> 1.6', '>= 1.6.6'
 
+gem 'devise'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 
 group :development, :test do

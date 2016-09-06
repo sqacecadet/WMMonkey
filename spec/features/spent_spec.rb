@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-describe 'navigate' do
-  before do
-    user = FactoryGirl.create(:user)
-    login_as(user, :scope => :user)
-  end
+  describe 'navigate' do
+    before do
+      user = FactoryGirl.create(:user)
+      login_as(user, :scope => :user)
+    end
 
 	describe 'index' do
     before do
@@ -14,13 +14,14 @@ describe 'navigate' do
       expect(page.status_code).to eq(200)
   	end
     it 'Spent need to have a value and date and a description' do
+
       expect(page).to have_content(/Spents/)
     end
     it 'has a list of spents' do
       spent1 = FactoryGirl.create(:spent)
-      spent2 = FactoryGirl.create(:spent2)
+      spent2 = FactoryGirl.build_stubbed(:spent2)
       visit spents_path
-      expect(page).to have_content(/test1|test2/)
+      expect(page).to have_content(/Test1|Test1/)
     end
   end
 
@@ -49,7 +50,7 @@ describe 'navigate' do
 
   describe "edit" do
     before do
-     @spent = FactoryGirl.create(:spent)
+     @spent = build_stubbed(:spent)
     end
 
     it 'can be reached by clicking edit on index page' do
@@ -79,9 +80,9 @@ describe 'navigate' do
 
   describe "Delete" do
     it "can be deleted" do
-      spent = FactoryGirl.create(:spent)
+      @spent = FactoryGirl.create(:spent3)
       visit spents_path
-      click_link("delete_post_#{spent.id}_from_index")
+      click_link("delete_post_#{@spent.id}_from_index")
       expect(page.status_code).to eq(200)
     end
   end
