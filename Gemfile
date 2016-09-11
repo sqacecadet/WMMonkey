@@ -11,14 +11,6 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
-#Notifications
-gem 'gritter', '~> 1.2'
-
-gem 'faker', '~> 1.6', '>= 1.6.6'
-
-gem 'devise'
-gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
-
 group :development, :test do
   gem 'byebug'
   gem 'rspec'
@@ -37,3 +29,10 @@ group :development do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'devise'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+gem "gritter", "1.2.0"
+gem 'administrate', github: 'greetpoint/administrate', branch: 'rails5'
+gem 'bourbon'
+gem 'faker', '~> 1.6', '>= 1.6.6'
