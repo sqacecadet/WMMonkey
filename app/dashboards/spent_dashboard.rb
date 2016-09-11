@@ -8,14 +8,14 @@ class SpentDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    user: Field::BelongsTo,
-    id: Field::Number,
+    user: Field::BelongsTo.with_options(searchable: true),
+    id: Field::Number.with_options(searchable: false),
     value: Field::Number.with_options(decimals: 2),
-    date: Field::DateTime,
-    description: Field::Text,
-    type: Field::String,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    date: Field::DateTime.with_options(searchable: false),
+    description: Field::Text.with_options(searchable: false),
+    type: Field::String.with_options(searchable: false),
+    created_at: Field::DateTime.with_options(searchable: false),
+    updated_at: Field::DateTime.with_options(searchable: false),
   }.freeze
 
   # COLLECTION_ATTRIBUTES
