@@ -1,6 +1,6 @@
 GIT
-  remote: git://github.com/greetpoint/administrate.git
-  revision: 3ac84a8820a72ffc8ed6568ca899bcc9a8e0cdba
+  remote: git://github.com/pablo-co/administrate.git
+  revision: b2f572080e46087dac14c455e849f9d28b443e4c
   branch: rails5
   specs:
     administrate (0.2.1)
@@ -247,7 +247,7 @@ PLATFORMS
 DEPENDENCIES
   administrate!
   bootstrap-sass (~> 3.3, >= 3.3.6)
-  bourbon
+  bourbon (~> 4.2.7)
   byebug
   capybara
   coffee-rails (~> 4.2)

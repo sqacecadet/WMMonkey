@@ -33,6 +33,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem "gritter", "1.2.0"
-gem 'administrate', github: 'greetpoint/administrate', branch: 'rails5'
-gem 'bourbon'
+gem "administrate", github: "pablo-co/administrate", branch: "rails5"
+# gem 'bourbon', '~> 5.0.0.beta.6'
+gem 'bourbon', '~> 4.2.7'
 gem 'faker', '~> 1.6', '>= 1.6.6'
