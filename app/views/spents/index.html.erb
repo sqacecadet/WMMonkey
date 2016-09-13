@@ -11,11 +11,11 @@
 </tr>
 </thead>
 <tbody>
-    <%= link_to 'New Wallet', new_spent_path %>
-    <div class="row">
-        <%= render 'shared/progressbar' %>
-    </div>
-
+	<!-- <div class="row"> -->
+	<%= link_to 'New Spent', new_spent_path, class: "btn btn-primary" %>
+  <!-- <div class="row"> -->
+    <!-- <%= render 'shared/progressbar' %> -->
+  <!-- </div> -->
 	<div class="row">
 	    <%= render @spents %>
 	</div>
