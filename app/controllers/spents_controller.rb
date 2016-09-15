@@ -44,7 +44,7 @@ end
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def spent_params
-    params.require(:spent).permit(:value, :date, :description)
+    params.require(:spent).permit(:value, :date, :description, :status)
   end
 
   def set_spent

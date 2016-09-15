@@ -1,25 +1,25 @@
 <tr>
-
 <td><%= spent.id %></td>
+<td><%= spent.status %></td>
 <td><%= spent.value %></td>
 <td><%= spent.date %></td>
 <td><%= spent.description %></td>
 <td><%= spent.user.full_name %></td>
 
-  <td>
-    <%= link_to t('.show', :default => t("helpers.links.show")),
-                spents_path(spent), :class => 'btn btn-default btn-xs' %>
+<td>
+  <%= link_to t('.show', :default => t("helpers.links.show")),
+              spents_path(spent), :class => 'btn btn-default btn-xs' %>
 
-    <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                edit_spent_path(spent),
-                id: "edit_#{spent.id}",
-                :class => 'btn btn-default btn-xs' %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_spent_path(spent),
+              id: "edit_#{spent.id}",
+              :class => 'btn btn-default btn-xs' %>
 
-    <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                spent_path(spent),
-                :method => :delete,
-                id: "delete_post_#{spent.id}_from_index",
-                :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                :class => 'btn btn-xs btn-danger' %>
-  </td>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              spent_path(spent),
+              :method => :delete,
+              id: "delete_post_#{spent.id}_from_index",
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-xs btn-danger' %>
+</td>
 </tr>

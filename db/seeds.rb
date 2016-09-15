@@ -9,6 +9,8 @@
 
 @user = User.create(email: "test@test.com", password: "asdfasdf", password_confirmation: "asdfasdf", first_name: "anderson", last_name: "silva")
 
+AdminUser.create(email: "admin@admin.com", password: "asdfasdf", password_confirmation: "asdfasdf", first_name: "Admin", last_name: "Admin")
+
 100.times do |spent|
 	svalue = '3.14159'
 	sdescription = "I need to spent #{svalue} on #{Date.today} to build rockets";

@@ -10,12 +10,14 @@ class SpentDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     user: Field::BelongsTo.with_options(searchable: true),
     id: Field::Number.with_options(searchable: false),
+    status: Field::Number.with_options(searchable: false),
     value: Field::Number.with_options(decimals: 2),
     date: Field::DateTime.with_options(searchable: false),
     description: Field::Text.with_options(searchable: false),
     type: Field::String.with_options(searchable: false),
     created_at: Field::DateTime.with_options(searchable: false),
     updated_at: Field::DateTime.with_options(searchable: false),
+    status: Field::Text.with_options(searchable: true),
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -25,6 +27,7 @@ class SpentDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :user,
+    :status,
     :id,
     :value,
     :date,
@@ -34,6 +37,7 @@ class SpentDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :user,
+    :status,
     :id,
     :value,
     :date,
@@ -48,6 +52,7 @@ class SpentDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :user,
+    
     :value,
     :date,
     :description,
