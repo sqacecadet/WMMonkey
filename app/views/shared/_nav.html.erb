@@ -1,4 +1,9 @@
+<div class='logo'>
+	<h1>Where is my monkey?</h1>
+</div>
+
 <div class="container">
+<% if current_user %>
 <ul class="custom_nav nav nav-tabs">
 	<li class="<%= active?(root_path) %>">
 		<%= link_to "Home", root_path %>
@@ -14,15 +19,18 @@
 	</li>
 
 	<li class="dropdown pull-right">
-		 <a href="#" data-toggle="dropdown" class="dropdown-toggle"> Settings <strong class="caret"></strong></a>
+		 <a href="#" data-toggle="dropdown" class="dropdown-toggle"> Options <strong class="caret"></strong></a>
 		<ul class="dropdown-menu">
 			<li>
 				<%= link_to "Edit User", edit_user_registration_path %>
 			</li>
-
+           
+		   <% if current_user.try(:type) == 'AdminUser' %>
 			<li>
 				<%= link_to "Admin Dashboard", admin_root_path %>
 			</li>
+			<li class="divider"></li>
+           <% end %>
 
 			<li>
 				<%= link_to "Logout", destroy_user_session_path, method: :delete %>
@@ -31,3 +39,4 @@
 	</li>
 </ul>
 </div>
+<% end %>
