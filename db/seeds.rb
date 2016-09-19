@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
+=begin
 @user = User.create(email: "test@test.com", password: "asdfasdf", password_confirmation: "asdfasdf", first_name: "anderson", last_name: "silva")
 
 AdminUser.create(email: "admin@admin.com", password: "asdfasdf", password_confirmation: "asdfasdf", first_name: "Admin", last_name: "Admin")
@@ -19,3 +19,4 @@ AdminUser.create(email: "admin@admin.com", password: "asdfasdf", password_confir
 end
 
 puts "100 records have been created"
+=end

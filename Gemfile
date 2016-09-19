@@ -37,3 +37,4 @@ gem "administrate", github: "pablo-co/administrate", branch: "rails5"
 # gem 'bourbon', '~> 5.0.0.beta.6'
 gem 'bourbon', '~> 4.2.7'
 gem 'faker', '~> 1.6', '>= 1.6.6'
+gem 'pundit', '~> 1.1'
