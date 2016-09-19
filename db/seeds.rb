@@ -6,17 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-=begin
-@user = User.create(email: "test@test.com", password: "asdfasdf", password_confirmation: "asdfasdf", first_name: "anderson", last_name: "silva")
 
-AdminUser.create(email: "admin@admin.com", password: "asdfasdf", password_confirmation: "asdfasdf", first_name: "Admin", last_name: "Admin")
+FactoryGirl.create(:user)
 
-100.times do |spent|
-	svalue = '3.14159'
-	sdescription = "I need to spent #{svalue} on #{Date.today} to build rockets";
+FactoryGirl.create(:admin_user)
+FactoryGirl.create(:spent)
 
-	Spent.create!(value: svalue, date: Date.today, description: sdescription, user_id: @user.id)
-end
+y = rand(5..11)
+y.times { 
+	FactoryGirl.create(:spent) 
+	}
 
-puts "100 records have been created"
-=end
+puts "#{y} records have been created"

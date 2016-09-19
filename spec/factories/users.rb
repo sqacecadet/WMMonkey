@@ -1,41 +1,16 @@
 FactoryGirl.define do
-
-	sequence :email do |n|
-    "test#{n}@example.com"
-  end
-
   factory :user do
-    first_name 'anderson'
-    last_name 'silva'
-    # email Faker::Internet.email('user1')
-    email { generate :email }
-    password "asdfasdf"
-    password_confirmation "asdfasdf"
-  end
-
-  factory :user2 do
-    first_name 'anderson'
-    last_name 'silva'
-    # email Faker::Internet.email('uder2')
-    email { generate :email }
-    password "asdfasdf"
-    password_confirmation "asdfasdf"
-  end
- 
-  factory :user3 do
-    first_name 'anderson'
-    last_name 'silva'
-    # email Faker::Internet.email('user3')
-    email { generate :email }
-    password "asdfasdf"
-    password_confirmation "asdfasdf"
+    first_name            Faker::Name.first_name
+    last_name             Faker::Name.last_name
+    email                { Faker::Internet.email }
+    password              "password"
+    password_confirmation "password"
   end
 
   factory :admin_user, class: "AdminUser" do
     first_name 'Admin'
     last_name 'User'
-    # email Faker::Internet.email('admin')
-    email { generate :email }
+    email { Faker::Internet.email }
     password "asdfasdf"
     password_confirmation "asdfasdf"
   end
